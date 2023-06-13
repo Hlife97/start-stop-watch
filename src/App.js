@@ -23,7 +23,6 @@ function App() {
 
   const handleReset = () => {
     setCount(0)
-    setChangeMode(true)
   }
 
   return (
