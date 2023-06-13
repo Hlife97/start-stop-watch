@@ -5,25 +5,17 @@ function App() {
   const [count, setCount] = useState(0)
   const [changeMode, setChangeMode] = useState(false)
 
-  const handleChangeMode = () => {
-    setChangeMode(!changeMode)
-  };
+  const handleChangeMode = () => setChangeMode(!changeMode)
 
   useEffect(() => {
     if (changeMode) {
-      const intervalId = setInterval(() => {
-        setCount((prevCount) => prevCount + 1);
-      }, 1000);
+      const intervalId = setInterval(() => setCount((prevCount) => prevCount + 1), 1000)
 
-      return () => {
-        clearInterval(intervalId);
-      };
+      return () => clearInterval(intervalId)
     }
   }, [changeMode]);
 
-  const handleReset = () => {
-    setCount(0)
-  }
+  const handleReset = () => setCount(0)
 
   return (
     <div>
